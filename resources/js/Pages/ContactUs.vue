@@ -1,65 +1,10 @@
 <template>
   <div>
-    <header class="bg-blue-600 text-white body-font">
-      <div
-        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
-      >
-        <inertia-link
-          href="/"
-          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-            ></path>
-          </svg>
-          <span class="ml-3 text-xl text-white">Home</span>
-        </inertia-link>
-
-        <nav
-          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
-        >
-          <inertia-link :href="route('login')" class="mr-5 hover:text-gray-900">
-            Log in
-          </inertia-link>
-          <inertia-link
-            v-if="canRegister"
-            :href="route('register')"
-            class="mr-5 hover:text-gray-900"
-            >Register</inertia-link
-          >
-        </nav>
-
-        <button
-          class="inline-flex items-center bg-gray-100 text-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-        >
-          Button
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </div>
-    </header>
+   
+    <Header/>
 
     <section class="text-gray-600 body-font relative">
-      <div class="container px-5 py-24 mx-auto">
+      <div class="container px-5 py-16 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
           <h1
             class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
@@ -67,8 +12,7 @@
             Contact Us
           </h1>
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-            gentrify.
+            Feel free to message us.
           </p>
         </div>
 
@@ -146,75 +90,20 @@
         </div>
       </div>
     </section>
+
+    <Footer></Footer>
+
   </div>
 </template>
 
 <style scoped>
-.bg-gray-100 {
-  background-color: #f7fafc;
-  background-color: rgba(247, 250, 252, var(--tw-bg-opacity));
-}
 
-.border-gray-200 {
-  border-color: #edf2f7;
-  border-color: rgba(237, 242, 247, var(--tw-border-opacity));
-}
-
-.text-gray-400 {
-  color: #cbd5e0;
-  color: rgba(203, 213, 224, var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-  color: #a0aec0;
-  color: rgba(160, 174, 192, var(--tw-text-opacity));
-}
-
-.text-gray-600 {
-  color: #718096;
-  color: rgba(113, 128, 150, var(--tw-text-opacity));
-}
-
-.text-gray-700 {
-  color: #4a5568;
-  color: rgba(74, 85, 104, var(--tw-text-opacity));
-}
-
-.text-gray-900 {
-  color: #1a202c;
-  color: rgba(26, 32, 44, var(--tw-text-opacity));
-}
-
-@media (prefers-color-scheme: dark) {
-  .dark\:bg-gray-800 {
-    background-color: #2d3748;
-    background-color: rgba(45, 55, 72, var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-gray-900 {
-    background-color: #1a202c;
-    background-color: rgba(26, 32, 44, var(--tw-bg-opacity));
-  }
-
-  .dark\:border-gray-700 {
-    border-color: #4a5568;
-    border-color: rgba(74, 85, 104, var(--tw-border-opacity));
-  }
-
-  .dark\:text-white {
-    color: #fff;
-    color: rgba(255, 255, 255, var(--tw-text-opacity));
-  }
-
-  .dark\:text-gray-400 {
-    color: #cbd5e0;
-    color: rgba(203, 213, 224, var(--tw-text-opacity));
-  }
-}
 </style>
 
 <script>
 import { HalfCircleSpinner } from "epic-spinners";
+import Header from './Components/Header'
+import Footer from './Components/Footer'
 export default {
   props: {
     canLogin: Boolean,
@@ -244,6 +133,8 @@ export default {
   },
   components: {
     HalfCircleSpinner,
+    Header,
+    Footer,
   },
 };
 </script>

@@ -18,4 +18,5 @@ createApp({
     .use(InertiaPlugin)
     .mount(el);
 
-InertiaProgress.init({ color: '#42b983'});
+    // vue js color #42b983
+InertiaProgress.init({ color: 'rgba(99, 102, 241)'});
